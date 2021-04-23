@@ -132,7 +132,7 @@ namespace Ganss.Text
 
             var word = node.Word;
             for (int i = 1; i < word.Length && node.Fail == null; i++)
-                node.Fail = Trie.ExploreFailLink(word.Substring(i));
+                node.Fail = Trie.ExploreFailLink(word[i..]);
 
             foreach (var subNode in node.Next.Values)
                 BuildFail(subNode);
@@ -175,6 +175,38 @@ namespace Ganss.Text
                     }
                 }
             }
+        }
+
+        public bool SearchAny(string text)
+        {
+            var current = Trie;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                var c = text[i];
+
+                while (current != null && !current.Next.ContainsKey(c))
+                    current = current.Fail;
+
+                if (current == null) current = Trie;
+
+                if (current.Next.TryGetValue(c, out current))
+                {
+                    var node = current;
+
+                    while (node != null)
+                    {
+                        if (node.IsWord)
+                        {
+                            return true;
+                        }
+
+                        node = node.Fail;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

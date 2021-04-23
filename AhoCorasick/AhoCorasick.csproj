@@ -3,20 +3,20 @@
     <RootNamespace>Ganss.Text</RootNamespace>
     <AssemblyTitle>AhoCorasick</AssemblyTitle>
     <Description>Implements the Aho-Corasick string search algorithm</Description>
-    <Copyright>Copyright 2013-$([System.DateTime]::Now.Year) Michael Ganss</Copyright>
+    <Copyright>Copyright 2013-$([System.DateTime]::Now.Year) Michael Ganss, tetyys</Copyright>
     <AppVeyor_Build_Version Condition="'$(APPVEYOR_BUILD_VERSION)' == ''">1.0.0</AppVeyor_Build_Version>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>$(AppVeyor_Build_Version).0</FileVersion>
     <PackageVersion>$(AppVeyor_Build_Version)</PackageVersion>
     <Authors>Michael Ganss</Authors>
-    <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <AssemblyName>AhoCorasick</AssemblyName>
     <PackageId>AhoCorasick</PackageId>
     <PackageTags>aho-corasick;aho;corasick;string;search;match;substring</PackageTags>
-    <PackageProjectUrl>https://github.com/mganss/AhoCorasick</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/mganss/AhoCorasick/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/tetyys/AhoCorasick</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/tetyys/AhoCorasick/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/mganss/AhoCorasick</RepositoryUrl>
+    <RepositoryUrl>git://github.com/tetyys/AhoCorasick</RepositoryUrl>
     <RootNamespace>Ganss.Text</RootNamespace>
     <DebugType>full</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
